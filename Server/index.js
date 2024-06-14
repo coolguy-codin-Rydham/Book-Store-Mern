@@ -10,7 +10,7 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin:"https://book-store-mern-otew.vercel.app/",
+  origin:"https://book-store-mern-steel.vercel.app/",
   methods:['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type']
 }))
