@@ -1,20 +1,17 @@
-import { useEffect } from "react"
-import axios from "axios"
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import {CreateBook, ShowBook, Home, DeleteBook, EditBook} from "./pages"
 function App() {
-  useEffect(()=>{
-    const getData = async()=>
-      {
-        const res = await axios.get("http://localhost:5555/books");
-        const data = res.data
-        console.log(data);
-      }
-      getData();
 
-  }, [])
   return (
-    <div>
-
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/books/create" element={<CreateBook/>}/>
+        <Route path="/books/details/:id" element={<ShowBook/>}/>
+        <Route path="/books/edit/:id" element={<EditBook/>}/>
+        <Route path="/book/delete/:id" element={<DeleteBook/>}/>
+      </Routes>
+    </Router>
   )
 }
 
