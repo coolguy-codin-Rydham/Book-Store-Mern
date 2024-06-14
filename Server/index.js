@@ -9,12 +9,13 @@ dotenv.config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin:"https://book-store-mern-steel.vercel.app/",
-  methods:['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type']
-}))
+// app.use(cors({
+//   origin:"https://book-store-mern-steel.vercel.app/",
+//   methods:['GET', 'POST', 'PUT', 'DELETE'],
+//   allowedHeaders: ['Content-Type']
+// }))
 
+app.use(cors())
 //Routes
 app.use("/books", BookRouter)
 
